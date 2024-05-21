@@ -14,8 +14,8 @@ async function movieList() {
         <div class="movie-card">
           <h3>${result.title}</h3>
           <img src="https://image.tmdb.org/t/p/w500${result.poster_path}" alt="${result.title}">
-          <p>Release Date: ${result.release_date}</p>
-          <p>Rating: ${result.vote_average}</p>
+          <p> ${result.title}</p>
+          <p> ${result.vote_average}</p>
         </div>
       `;
     });
