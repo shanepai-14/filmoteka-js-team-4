@@ -72,7 +72,7 @@ export function ModalLightbox(movieDetails){
      <p class="movie-rating">${movieDetails.vote_average}</p>
 
      <div>
-     <button>ADD TO WATCH/button>
+     <button>ADD TO WATCH</button>
      <button>ADD TO QUEUE</button>
     </div>
      </div>
