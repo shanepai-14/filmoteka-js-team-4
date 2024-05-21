@@ -15,5 +15,26 @@
 
 .movie-card img{
     width: 274px;
+    border-radius: 5px;
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 }
   
+.movie-title{
+  color: #000;
+font-family: Roboto;
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: 16px; 
+margin-top: 10px;
+margin-bottom: 0;
+}
+.movie-genre{
+  color: #FF6B08;
+font-family: Roboto;
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: 16px;
+margin-top: 6px;
+}
