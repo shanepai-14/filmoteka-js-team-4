@@ -1,8 +1,8 @@
 import axios from 'axios';
 // import { Notify } from 'notiflix/build/notiflix-notify-aio.js';
-// import simpleLightbox from 'simplelightbox';
-// import 'simplelightbox/dist/simple-lightbox.min.css';
+
 import { getMovieDetails } from './api';
+import { ModalLightbox } from './utils';
 
 // const modalCard = document.querySelector('.modal-card');
 
@@ -20,19 +20,14 @@ async function handleMovieCardClick(event) {
     console.log('Clicked movie-card data-id:', dataId);
     // Call the getMovieDetails function with the data-id
     const movieDetails = await getMovieDetails(dataId);
+    ModalLightbox(movieDetails);
   }
 }
 
 // Get the parent container element
 var movieContainer = document.querySelector('.movie-container');
 console.log(movieContainer);
-// Add click event listener to the parent container
+
 movieContainer.addEventListener('click', handleMovieCardClick);
 
-// const closeModalButton = document.querySelector('.button-close');
-// const modalContainer = document.querySelector('.modal');
 
-// const lightbox = new simpleLightbox('.lightbox', {
-//   captionsData: 'alt',
-//   captionsDelay: 250,
-// });

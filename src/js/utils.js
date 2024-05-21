@@ -1,3 +1,5 @@
+import * as basicLightbox from 'basiclightbox'
+
 const genres = [
     { "id": 28, "name": "Action" },
     { "id": 12, "name": "Adventure" },
@@ -34,14 +36,53 @@ export function movieCard(id,poster_path,title,genre_ids,year){
           <img src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">
           <p class="movie-title">${title}</p>
           <p class="movie-genre">${getGenreNamesByIds(genre_ids
-          )} | ${year}</p>
+          )} | ${year[0]}</p>
         </div>
       `
 }
 
 
 
+export function ModalLightbox(movieDetails){
 
+    const instance = basicLightbox.create(`
+    <div class="modal-movie">
+      <img src="https://image.tmdb.org/t/p/w500${movieDetails.poster_path}" alt="${movieDetails.title}">
+     <div>
+     <h1 class="movie-title">${movieDetails.title}</h1>
+     <table>
+      <tr>
+      <td>Vote / Votes</td>
+      <td><span>${movieDetails.vote_average}</span> / <span>${movieDetails.vote_count}</span></td>
+      </tr>
+      <tr>
+      <td>Popularity</td>
+      <td>${movieDetails.popularity}</td>
+      </tr>
+      <tr>
+      <td>Original Title</td>
+      <td>${movieDetails.original_title} </td>
+      </tr>
+      <tr>
+      <td>Genre</td>
+      <td> </td>
+      </tr>
+     </table>
+     <p class="movie-overview">${movieDetails.overview}</p>
+     <p class="movie-rating">${movieDetails.vote_average}</p>
+
+     <div>
+     <button>ADD TO WATCH/button>
+     <button>ADD TO QUEUE</button>
+    </div>
+     </div>
+ 
+      
+    </div>
+  `)
+  
+  instance.show()
+  }
 
 
 
