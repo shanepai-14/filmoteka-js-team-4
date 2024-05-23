@@ -1,40 +1,64 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');  
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+// $mobile: 320px;
+// $tablet: 768px;
+// $desktop: 1280px;
+// $mob-max-width: 767px;
+
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --logo-color: #818181;
+  --light-grey: #8c8c8c;
+  --orange: #ff6b01;
+}
+body {
+  color: var(--slate);
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--white);
+  margin: 0 auto;
+  font-style: normal;
+}
+
+li {
+  list-style: none;
+}
 
 .movie-container {
-    display: flex;
-    // max-width: 1140px;
-    justify-content: center;
-    padding: 0;
-    gap: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    flex-wrap: wrap;
-    padding: 4.438rem;
+  display: flex;
+  // max-width: 1140px;
+  justify-content: center;
+  padding: 0;
+  gap: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  flex-wrap: wrap;
+  padding: 4.438rem;
 }
 
-.movie-card img{
-    width: 274px;
-    border-radius: 5px;
-    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+.movie-card img {
+  width: 274px;
+  border-radius: 5px;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
 }
-  
-.movie-title{
+
+.movie-title {
   color: #000;
-font-family: Roboto;
-font-size: 12px;
-font-style: normal;
-font-weight: 500;
-line-height: 16px; 
-margin-top: 10px;
-margin-bottom: 0;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  margin-top: 10px;
+  margin-bottom: 0;
 }
-.movie-genre{
+.movie-genre {
   color: #FF6B08;
-font-family: Roboto;
-font-size: 12px;
-font-style: normal;
-font-weight: 500;
-line-height: 16px;
-margin-top: 6px;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  margin-top: 6px;
 }
