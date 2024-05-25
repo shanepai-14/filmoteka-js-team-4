@@ -4,9 +4,12 @@ import * as basicLightbox from 'basiclightbox';
 const MovieDetails = ({ movieDetails = {}, modal }) => {
   const modalClose = () => modal.close();
 
-  const getMovieGenresList = genres =>
+  // const roundPopularity = Math.round(popularity);
+  // const roundVote_average = vote_average.toFixed(2);
+
+  const getMovieGenresNames = genres =>
     genres
-      .splice()
+      .splice(0, Math.min(2, genres.length))
       .map(genre => genre.name)
       .join(',');
 
@@ -32,19 +35,27 @@ const MovieDetails = ({ movieDetails = {}, modal }) => {
 
         <div class="movie-details-modal">
           <ul class="property">
-            <li>Vote/Votes</li>
-            <li>Popularity</li>
-            <li>Original Title</li>
-            <li>Genre</li>
-          </ul>
-          <ul class="values">
-            <li class="values">
-              <span class="vote">{movieDetails.vote_average}</span>|{' '}
-              <span class="votes">{movieDetails.vote_count}</span>
+            <li>
+              <div class="left-side">Vote/Votes </div>{' '}
+              <div class="votes-right-side">
+                <span class="vote">{movieDetails.vote_average}</span>/{' '}
+              </div>
+              <span class="votes">{movieDetails.vote_count}</span>{' '}
             </li>
-            <li class="values">{movieDetails.popularity}</li>
-            <li class="values">{movieDetails.original_title}</li>
-            <li class="values">{getMovieGenresList(movieDetails.genres)}</li>
+            <li>
+              <div class="left-side ">Popularity </div>
+              <span class="right-side">{movieDetails.popularity}</span>
+            </li>
+            <li>
+              <div class="left-side ">Original Title </div>
+              <span class="right-side">{movieDetails.original_title}</span>
+            </li>
+            <li>
+              <div class="left-side ">Genre </div>
+              <span class="right-side">
+                {getMovieGenresNames(movieDetails.genres)}
+              </span>{' '}
+            </li>
           </ul>
         </div>
       </div>

@@ -12,13 +12,16 @@
   --logo-color: #818181;
   --light-grey: #8c8c8c;
   --orange: #ff6b01;
+  --cream: #f7f7f7;
 }
 body {
-  color: var(--slate);
   font-family: 'Roboto', sans-serif;
-  background-color: var(--white);
   margin: 0 auto;
+  font-family: Roboto;
+  font-size: 12px;
   font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
 }
 
 li {
@@ -54,7 +57,7 @@ li {
   margin-bottom: 0;
 }
 .movie-genre {
-  color: #FF6B08;
+  color: #ff6b08;
   font-family: Roboto;
   font-size: 12px;
   font-style: normal;
