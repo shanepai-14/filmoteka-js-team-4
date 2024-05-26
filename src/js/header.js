@@ -11,7 +11,6 @@ import basiclightbox from 'basiclightbox';
 import { Notify } from 'notiflix';
 import { ModalLightbox, getGenreNamesByIds } from './utils.js';
 import throttle from 'lodash.throttle';
-``;
 
 //Elements in header2.html
 const searchForm = document.getElementById('search-form');
