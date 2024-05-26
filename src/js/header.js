@@ -7,11 +7,11 @@ import {
   MovieController,
 } from './api.js';
 import axios from 'axios';
-import { Notify } from 'notiflix/build/notiflix-notify-aio.js';
 import basiclightbox from 'basiclightbox';
 import { Notify } from 'notiflix';
 import { ModalLightbox, getGenreNamesByIds } from './utils.js';
 import throttle from 'lodash.throttle';
+``;
 
 //Elements in header2.html
 const searchForm = document.getElementById('search-form');
@@ -27,6 +27,14 @@ const activePage = window.location.pathname;
 console.log(activePage);
 // const navMenuList = document.querySelectorAll('nav-menu-list');
 
+function activeLinkHome(e) {
+  e.preventDefault();
+
+  if (navLinksHome.includes(`${activePage}`))
+    navLinksLibrary.classList.remove('active');
+  navLinksHome.classList.add('active');
+}
+navLinksHome.addEventListener('click', activeLinkHome);
 //Elements in index.html
 export const options = {
   params: {
@@ -62,15 +70,6 @@ searchForm.addEventListener('submit', handleSubmit);
     if (navList.href.includes(`{activePage}`)) navList.classList.add('active');
   });
 } */
-
-function activeLinkHome(e) {
-  e.preventDefault();
-
-  if (navLinksHome.includes(`${activePage}`))
-    navLinksLibrary.classList.remove('active');
-  navLinksHome.classList.add('active');
-}
-navLinksHome.addEventListener('click', activeLinkHome);
 
 // navLinks.addEventListener('click', activeLink);
 // if (navLinksLibrary.href.includes(`${activePage}`))
