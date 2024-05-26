@@ -1,12 +1,16 @@
 import './js/modal.js';
+import './js/header.js';
+// import './js/header_library.js';
+
 import { MovieController, getMoviesPopular } from './js/api.js';
-import { API_KEY, BASE_URL } from './js/api.js';
+import { API_KEY, BASE_URL, options } from './js/api.js';
 import { movieCard } from './js/utils.js';
 
 const movieContainer = document.querySelector('.movie-container');
 const listLoader = document.querySelector('.loader');
 let currentPage = 1;
 
+<<<<<<< Updated upstream
 MovieController('spiderman', 2);
 
 async function movieList(page = 1) {
@@ -20,6 +24,24 @@ async function movieList(page = 1) {
     displayResult(queryResult.results);
     setupPagination(queryResult.total_results);
     listLoader.classList.add('is-hidden');
+=======
+// MovieController('superman', 2);
+async function movieList() {
+  try {
+    const queryResult = await getMoviesPopular(1);
+    // console.log(queryResult);
+    let finalResult = queryResult.results.map(result => {
+      let year = result.release_date.split('-');
+      return movieCard(
+        result.id,
+        result.poster_path,
+        result.title,
+        result.genre_ids,
+        year
+      );
+    });
+    movieContainer.innerHTML = finalResult.join('');
+>>>>>>> Stashed changes
   } catch (error) {
     console.error('Error fetching movies:', error);
   }

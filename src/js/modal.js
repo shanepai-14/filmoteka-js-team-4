@@ -29,5 +29,3 @@ var movieContainer = document.querySelector('.movie-container');
 console.log(movieContainer);
 
 movieContainer.addEventListener('click', handleMovieCardClick);
-
-
