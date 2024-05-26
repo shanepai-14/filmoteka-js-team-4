@@ -40,12 +40,14 @@ function displayResult(dataResult) {
 }
 
 function setupPagination(total) {
+  const maxItems = 1000 * 20;
+  const limitedTotal = Math.min(total, maxItems);
+
   $('#pagination').pagination({
-    dataSource: Array.from({ length: total }, (_, i) => i + 1),
+    dataSource: Array.from({ length: limitedTotal }, (_, i) => i + 1),
     pageSize: 20,
     callback: async function (data, pagination) {
       listLoader.classList.remove('is-hidden');
-      movieContainer.innerHTML = '';
       currentPage = pagination.pageNumber;
       const queryResult = await getMoviesPopular(currentPage);
       displayResult(queryResult.results);
