@@ -2,7 +2,7 @@ import axios from 'axios';
 // import { Notify } from 'notiflix/build/notiflix-notify-aio.js';
 
 import { getMovieDetails } from './api';
-import { ModalLightbox } from './utils';
+import { showMovieDetails } from './movie-details';
 
 // const modalCard = document.querySelector('.modal-card');
 
@@ -20,7 +20,7 @@ async function handleMovieCardClick(event) {
     console.log('Clicked movie-card data-id:', dataId);
     // Call the getMovieDetails function with the data-id
     const movieDetails = await getMovieDetails(dataId);
-    ModalLightbox(movieDetails);
+    showMovieDetails(movieDetails);
   }
 }
 
