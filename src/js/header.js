@@ -18,13 +18,7 @@ const searchInput = document.getElementById('input-textbox');
 const gallery = document.querySelector('.gallery');
 const submitBtn = document.querySelector('button[type="submit"]');
 const navLinksHome = document.querySelector('.home');
-// console.log(navLinksHome);
 const navLinksLibrary = document.querySelector('.library');
-const navLinks = document.querySelectorAll('.nav-list-link');
-console.log(navLinks);
-const activePage = window.location.pathname;
-console.log(activePage);
-const navMenuList = document.querySelectorAll('.nav-bar');
 
 //Elements in index.html
 export const options = {
@@ -50,14 +44,13 @@ function handleSubmit(e) {
 searchForm.addEventListener('submit', handleSubmit);
 
 //Elements in Navigation
-
-/* function handleNavMenuClick(e) {
-  navLinks.forEach(link => {
-    if (link.href.includes(`${activePage}`)) {
-      console.log(link.href);
-      link.classList.add('active');
-    }
-  });
-}
-
-navMenuList.addEventListener('click', handleNavMenuClick); */
+navLinksHome.addEventListener('click', function (e) {
+  e.preventDefault();
+  navLinksHome.classList.add('active');
+  navLinksLibrary.classList.remove('active');
+});
+navLinksLibrary.addEventListener('click', function (e) {
+  e.preventDefault();
+  navLinksLibrary.classList.add('active');
+  navLinksHome.classList.remove('active');
+});
