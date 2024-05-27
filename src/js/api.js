@@ -12,7 +12,7 @@ export const getMoviesPopular = async page => {
         },
       }
     );
-    console.log(data);
+    // console.log(data);
     return data;
   } catch (error) {
     throw new Error(`Error fetching popular movies: ${error.message}`);
@@ -41,7 +41,7 @@ export const getMovieDetails = async id => {
     const { data } = await axios.get(
       `${BASE_URL}3/movie/${id}?api_key=${API_KEY}`
     );
-    console.log(data);
+    // console.log(data);
     return data;
   } catch (error) {
     throw new Error(`Error fetching movie details: ${error.message}`);

@@ -7,7 +7,7 @@ import { showMovieDetails } from './movie-details';
 // const modalCard = document.querySelector('.modal-card');
 
 async function handleMovieCardClick(event) {
-  console.log('clicked');
+  // console.log('clicked');
   // Check if the clicked element has the class 'movie-card'
   var movieCard = event.target.closest('.movie-card');
 
@@ -26,8 +26,6 @@ async function handleMovieCardClick(event) {
 
 // Get the parent container element
 var movieContainer = document.querySelector('.movie-container');
-console.log(movieContainer);
+// console.log(movieContainer);
 
 movieContainer.addEventListener('click', handleMovieCardClick);
-
-

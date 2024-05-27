@@ -1,0 +1,192 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-font: #fff;
+  --orange: #ff6b08;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--primary-font);
+}
+
+.header {
+  width: 100%;
+  background-color: rgb(148, 201, 178);
+  background-image: url('../images/header-images/header.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 14.375rem; //230px
+  padding: 0 4.438rem; //0 71px;
+  color: var(--primary-font);
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  & .main-container {
+    display: flex;
+    align-items: center;
+    & .film-icon-svg {
+      margin-right: 10px;
+      // margin-top: 46px;
+      height: 24px;
+      width: 24px;
+    }
+  }
+  & ul {
+    align-items: center;
+  }
+}
+
+.nav-bar {
+  width: 100%;
+  align-items: center;
+  padding: 3.625rem 0; //58px
+}
+
+.nav-menu {
+  display: flex;
+  & li {
+    font-size: 0.75rem; //12px
+    & a {
+      transition: all 250ms ease-out;
+      position: relative;
+      transform: translateX(-100%);
+      &::before {
+        content: '';
+        position: absolute;
+        height: 3px;
+        background-color: var(--orange);
+        left: 0;
+        top: 15;
+        background-image: linear-gradient(to right, orange, red);
+        pointer-events: none;
+      }
+      &:hover,
+      &:focus,
+      &:active {
+        color: var(--orange);
+        width: 100%;
+        height: 3px;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        &::before {
+          width: 100%;
+        }
+        &:hover::after,
+        &:focus::after {
+          opacity: 1;
+        }
+      }
+      &:hover {
+        color: transparent;
+        background-image: linear-gradient(to right, orange, red);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-background-text-fill-color: transparent;
+      }
+    }
+  }
+  & .title {
+    content: none;
+    &::before {
+      content: none;
+    }
+    font-size: 1.875rem;
+    line-height: 2.26rem;
+  }
+  & .home {
+    margin-left: auto;
+  }
+  & .library {
+    margin-left: 2.438rem; //39px;
+  }
+}
+.active {
+  opacity: 1;
+  width: 100%;
+  height: 3px;
+  border-bottom: 0.5px solid transparent;
+  background-color: var(--orange);
+  color: transparent;
+  background-image: linear-gradient(to right, orange, red);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-background-text-fill-color: transparent;
+}
+.form-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 21rem; //336px;
+  margin: 0 auto;
+  & input {
+    height: 100%;
+    width: 100%;
+    padding: 0.063rem; //1px;
+    outline: none;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 0.031rem solid var(--primary-font);
+    color: var(--primary-font);
+    background: transparent;
+    font-size: 0.875rem; //14px;
+    line-height: 1.026rem; //16.41px;
+    transition: all 250ms ease-out;
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--orange);
+      border-bottom: 0.031rem solid var(--orange);
+      background-image: linear-gradient(to right, orange, red);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-background-text-fill-color: transparent;
+    }
+  }
+  & button {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    top: 0;
+    right: 0;
+    width: 0.75rem; //12px;
+    height: 100%;
+    background: none;
+    font-size: 0.75rem;
+    border: none;
+    outline: none;
+    padding: 1px;
+    & i {
+      color: var(--primary-font);
+      &:hover,
+      &:focus,
+      &:active {
+        color: var(--orange);
+        color: transparent;
+        background-image: linear-gradient(to right, orange, red);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-background-text-fill-color: transparent;
+      }
+    }
+  }
+}

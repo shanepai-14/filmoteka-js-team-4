@@ -21,7 +21,9 @@
     "axios": "^1.6.8",
     "basiclightbox": "^5.0.4",
     "modern-normalize": "^1.1.0",
-    "preact": "^10.22.0"
+    "preact": "^10.22.0",
+    "lodash.throttle": "^4.1.1",
+    "notiflix": "^3.2.7"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
