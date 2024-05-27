@@ -17,8 +17,8 @@ const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('input-textbox');
 const gallery = document.querySelector('.gallery');
 const submitBtn = document.querySelector('button[type="submit"]');
-const navLinksHome = document.querySelector('.home');
-const navLinksLibrary = document.querySelector('.library');
+const navLinkLists = document.querySelectorAll('.nav-list-link');
+console.log(navLinkLists);
 
 //Elements in index.html
 export const options = {
@@ -43,14 +43,10 @@ function handleSubmit(e) {
 }
 searchForm.addEventListener('submit', handleSubmit);
 
-//Elements in Navigation
-navLinksHome.addEventListener('click', function (e) {
-  e.preventDefault();
-  navLinksHome.classList.add('active');
-  navLinksLibrary.classList.remove('active');
-});
-navLinksLibrary.addEventListener('click', function (e) {
-  e.preventDefault();
-  navLinksLibrary.classList.add('active');
-  navLinksHome.classList.remove('active');
+navLinkLists.forEach(navLinkList => {
+  navLinkList.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector('.active')?.classList.remove('active');
+    navLinkList.classList.add('active');
+  });
 });
