@@ -18,22 +18,14 @@ const searchInput = document.getElementById('input-textbox');
 const gallery = document.querySelector('.gallery');
 const submitBtn = document.querySelector('button[type="submit"]');
 const navLinksHome = document.querySelector('.home');
-console.log(navLinksHome);
+// console.log(navLinksHome);
 const navLinksLibrary = document.querySelector('.library');
-const navLists = document.querySelectorAll('.nav-list-link');
-console.log(navLists);
+const navLinks = document.querySelectorAll('.nav-list-link');
+console.log(navLinks);
 const activePage = window.location.pathname;
 console.log(activePage);
-// const navMenuList = document.querySelectorAll('nav-menu-list');
+const navMenuList = document.querySelectorAll('.nav-bar');
 
-/* function activeLinkHome(e) {
-  e.preventDefault();
-
-  if (navLinksHome.includes(`${activePage}`))
-    navLinksLibrary.classList.remove('active');
-  navLinksHome.classList.add('active');
-}
-navLinksHome.addEventListener('click', activeLinkHome); */
 //Elements in index.html
 export const options = {
   params: {
@@ -45,45 +37,27 @@ export const options = {
     page: '',
     popularity: '',
     adult: '',
-    results: [],
+    total_results: '',
   },
 };
 
 function handleSubmit(e) {
   e.preventDefault();
   options.params.query = searchInput.value.toLowerCase().trim();
-  console.log(options.params.query);
-
-  if (options.params.query === '')
-    return Notify.failure('Please enter correct details');
-  MovieController(options.params.query, '');
+  // console.log(options.params.query);
+  MovieController(options.params.query, options.params.page);
 }
 searchForm.addEventListener('submit', handleSubmit);
 
 //Elements in Navigation
-function activeListLink(e) {
-  e.preventDefault();
-  alert('Active Link');
-  navLists.forEach(navList => {
-    // const activePage = new URL(navLink.href).pathname;
-    if (navList.href.includes(`{activePage}`)) navList.classList.add('active');
+
+/* function handleNavMenuClick(e) {
+  navLinks.forEach(link => {
+    if (link.href.includes(`${activePage}`)) {
+      console.log(link.href);
+      link.classList.add('active');
+    }
   });
 }
-navLists.addEventListener('click', activeListLink);
 
-// navLinks.addEventListener('click', activeLink);
-// if (navLinksLibrary.href.includes(`${activePage}`))
-
-/*   navLinksHome.classList.remove('active');
-  navLinksLibrary.classList.add('active'); */
-
-// navLinksLibrary.addEventListener('click', activeLinkLibrary);
-
-/* function activeLinkHome(e) {
-  e.preventDefault();
-
-  if (navLinksHome.href.includes(windowPathname))
-    navLinksLibrary.classList.remove('active');
-  navLinksHome.classList.add('active');
-}
-navLinksHome.addEventListener('click', activeLinkHome); */
+navMenuList.addEventListener('click', handleNavMenuClick); */
