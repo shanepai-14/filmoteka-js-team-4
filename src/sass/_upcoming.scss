@@ -1,4 +1,4 @@
-.container {
+.upcoming {
     text-align: center;
     margin-top: 50px;
   }
@@ -10,7 +10,7 @@
     margin-top: 20px;
   }
   
-  .movie-card {
+  .upcoming-movie-card {
     border: 1px solid #ddd;
     padding: 15px;
     border-radius: 5px;
@@ -18,17 +18,17 @@
     background-color: #fff;
   }
   
-  .movie-card img {
+  .upcoming-movie-card img {
     width: 100%;
     height: auto;
     border-radius: 5px;
   }
   
-  .movie-card h2 {
+  .upcoming-movie-card h2 {
     margin-top: 10px;
   }
   
-  .movie-card p {
+  .upcoming-movie-card p {
     font-size: 14px;
     color: #666;
   }
