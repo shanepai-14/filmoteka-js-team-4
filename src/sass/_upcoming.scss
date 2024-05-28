@@ -16,10 +16,13 @@
   display: block;
 }
 .upcoming-container {
-  padding: 0 4.438rem 0 4.438rem;
+ 
+  max-width: 1529.984px;
+  margin-right: auto;
+  margin-left: auto;
 }
 #upcoming{
-  padding-top: 20px;
+   padding: 20px 4.438rem 0 4.438rem;
 }
 
 .swiper-slide img:hover {
