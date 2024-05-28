@@ -1,5 +1,7 @@
+
 import { upcoming } from "./api";
 import {movieCardUpcoming} from './utils';
+
 
 
 const upcomingList = document.getElementById('swiper-list');
@@ -38,6 +40,7 @@ async function upcomingMovies(){
     });
   }
 }
+
 
 
 function displayResult(dataResult) {
