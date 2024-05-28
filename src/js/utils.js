@@ -22,6 +22,13 @@ const genres = [
   { id: 37, name: 'Western' },
 ];
 
+export function convertDate(date) {
+  const inputDate = new Date(date);
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  const targetDate = new Date('1999-08-23');
+  const formattedDate = targetDate.toLocaleString('en-US', options);
+  return formattedDate;
+}
 export function getGenreNamesByIds(ids) {
   const names = ids
     .map(id => {
@@ -40,6 +47,16 @@ export function movieCard(id, poster_path, title, genre_ids, year) {
           <p class="movie-genre">${getGenreNamesByIds(genre_ids)} | ${
     year[0]
   }</p>
+        </div>
+      `;
+}
+
+export function movieCardUpcoming(id, poster_path, title, year) {
+  return `
+        <div class="swiper-slide" data-id="${id}">
+          <img src="${poster_path == null ? `https://placehold.co/400x600`:  `https://image.tmdb.org/t/p/w500`+poster_path}" alt="${title}">
+          <p class="upcoming-title">${title}</p>
+          <p class="upcoming-year">${convertDate(year)}</p>
         </div>
       `;
 }

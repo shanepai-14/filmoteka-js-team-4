@@ -48,6 +48,7 @@ export const getMovieDetails = async id => {
   }
 };
 
+
 export const MovieController = async (query, page) => {
   try {
     if (query !== '') {
@@ -60,3 +61,15 @@ export const MovieController = async (query, page) => {
     throw new Error(`Error in MovieController: ${error.message}`);
   }
 };
+export const upcoming = async () => {
+  try {
+    const {data} = await axios.get(
+      `${BASE_URL}3/movie/upcoming?api_key=${API_KEY}&region=US&language=en-US&page=1`
+    );
+    console.log(data);
+    return data;
+  } catch (error) {
+    throw new Error(`Error fetching movie details: ${error.message}`);
+  }
+};
+

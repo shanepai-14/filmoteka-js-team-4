@@ -1,5 +1,6 @@
 import './js/modal.js';
 import './js/header.js';
+import './js/upcoming.js'
 // import './js/header_library.js';
 
 import { MovieController, getMoviesPopular } from './js/api.js';
