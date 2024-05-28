@@ -43,3 +43,5 @@ movies.forEach(movie => {
   const movieCard = createMovieCard(movie);
   movieGrid.appendChild(movieCard);
 });
+
+var swiper = new Swiper(".mySwiper", {});

@@ -1,4 +1,4 @@
-.upcoming {
+.upcoming-title{
     text-align: center;
     margin-top: 50px;
   }
@@ -31,4 +31,10 @@
   .upcoming-movie-card p {
     font-size: 14px;
     color: #666;
+  }
+
+  .upcoming-img {
+   max-width: 100%;
+    height: auto;
+    display: block;
   }
