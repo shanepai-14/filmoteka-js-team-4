@@ -57,16 +57,17 @@ const MovieDetails = ({ movieDetails = {}, modal }) => {
             </li>
           </ul>
         </div>
-      </div>
-      <div class="about">
-        <p class="about-title">About</p>
-        <div class="overview-container">
-          <p class="movie-overview">{movieDetails.overview}</p>
+
+        <div class="about">
+          <p class="about-title">About</p>
+          <div class="overview-container">
+            <p class="movie-overview">{movieDetails.overview}</p>
+          </div>
         </div>
-      </div>
-      <div class="buttons">
-        <button class="button-to-watched">Add to watched</button>
-        <button class="button-to-queue">Add to queue</button>
+        <div class="buttons">
+          <button class="button-to-watched">Add to watched</button>
+          <button class="button-to-queue">Add to queue</button>
+        </div>
       </div>
     </div>
   );
