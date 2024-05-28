@@ -26,6 +26,6 @@ async function handleMovieCardClick(event) {
 
 // Get the parent container element
 var movieContainer = document.querySelector('.movie-container');
-// console.log(movieContainer);
+console.log(movieContainer);
 
 movieContainer.addEventListener('click', handleMovieCardClick);
