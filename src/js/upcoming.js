@@ -1,22 +1,6 @@
+
 const movieGrid = document.querySelector('.movie-grid');
-const movies = [
-  {
-    title: "THE WATCHERS",
-    poster: "https://www.example.com/thewatchers.jpg",
-    releaseDate: "2024-06-07"
-  },
-  {
-    title: "IN A VIOLENT NATURE",
-    poster: "https://www.example.com/inaviolentnature.jpg",
-    releaseDate: "2024-05-31"
-  },
-  {
-    title: "THE DEAD DON'T HURT",
-    poster: "https://www.example.com/thedeaddont.jpg",
-    releaseDate: "2024-05-31"
-  },
-  // ... Add more movies
-];
+
 
 function createMovieCard(movie) {
   const movieCard = document.createElement('div');
@@ -44,4 +28,14 @@ movies.forEach(movie => {
   movieGrid.appendChild(movieCard);
 });
 
-var swiper = new Swiper(".mySwiper", {});
+var swiper = new Swiper('.mySwiper', {
+  pagination: {
+    el: '.swiper-pagination',
+  },
+  slidesPerView: 8,
+  spaceBetween: 18,
+  autoplay: {
+    delay: 3000,
+  },
+
+});
