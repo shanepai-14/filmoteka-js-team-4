@@ -53,7 +53,7 @@ export function movieCard(id, poster_path, title, genre_ids, year) {
 
 export function movieCardUpcoming(id, poster_path, title, year) {
   return `
-        <div class="swiper-slide" data-id="${id}">
+        <div class="movie-card swiper-slide " data-id="${id}">
           <img src="${poster_path == null ? `https://placehold.co/400x600`:  `https://image.tmdb.org/t/p/w500`+poster_path}" alt="${title}">
           <p class="upcoming-title">${title}</p>
           <p class="upcoming-year">${convertDate(year)}</p>
