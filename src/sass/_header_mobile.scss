@@ -203,6 +203,7 @@ a {
   }
   .nav-menu {
     display: flex;
+    justify-content: flex-end;
     & .title {
       display: block;
       margin-left: 10px;

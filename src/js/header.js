@@ -43,10 +43,10 @@ function handleSubmit(e) {
 }
 searchForm.addEventListener('submit', handleSubmit);
 
-// navLinkLists.forEach(navLinkList => {
-//   navLinkList.addEventListener('click', e => {
-//     e.preventDefault();
-//     document.querySelector('.active')?.classList.remove('active');
-//     navLinkList.classList.add('active');
-//   });
-// });
+navLinkLists.forEach(navLinkList => {
+  navLinkList.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector('.active')?.classList.remove('active');
+    navLinkList.classList.add('active');
+  });
+});
