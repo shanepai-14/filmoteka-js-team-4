@@ -159,14 +159,15 @@
 
     .img-container {
       padding-bottom: 0;
-      .image {
-        min-width: 264px;
-      }
+    }
+    .image {
+      min-width: 264px;
     }
   }
 
   @media screen and (min-width: 1024px) {
-    max-width: calc(100vw - 142px);
+    width: calc(100vw - 142px);
+    max-width: 978px;
     padding: 50px 30px 40px;
     gap: 30px;
     .image {
