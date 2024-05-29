@@ -31,7 +31,9 @@
 .button-close:focus {
   color: var(--orange);
 }
-
+// .img-container{
+//   max-width: 300px;
+// }
 .modal-movie {
   animation: Opacity 1.5s ease alternate;
   background-color: var(--white);
@@ -44,7 +46,7 @@
   max-width: 500px;
   max-height: calc(100vh - 40px);
   padding: 48px 20px;
-  overflow-y: scroll;
+  // overflow-y: scroll;
 
   .img-container {
     flex: 1 1;
@@ -160,8 +162,11 @@
     .img-container {
       padding-bottom: 0;
     }
-    .image {
-      min-width: 264px;
+    // .image {
+    //   min-width: 264px;
+    // }
+    .img-container{
+      max-width: 264px;
     }
   }
 
@@ -170,8 +175,9 @@
     max-width: 978px;
     padding: 50px 30px 40px;
     gap: 30px;
-    .image {
-      min-width: 396px;
+ 
+    .img-container{
+      max-width:  300px;
     }
     .buttons {
       max-width: 287px;

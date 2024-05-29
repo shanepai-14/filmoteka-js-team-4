@@ -68,7 +68,7 @@ export function movieCard(id, poster_path, title, genre_ids, year,vote) {
   return `
 
         <div class="movie-card" data-id="${id}">
-          <img src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">
+          <img src="${poster_path == null ? `https://placehold.co/400x600`:  `https://image.tmdb.org/t/p/w500`+poster_path}" alt="${title}">
           <p class="movie-title">${title}</p>
           <p class="movie-genre">${getGenreNamesByIds(genre_ids)} | ${
     year[0]

@@ -21,10 +21,12 @@ const MovieDetails = ({ movieDetails = {}, modal }) => {
       <div class="img-container">
         <img
           class="image"
-          src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
+          src={movieDetails.poster_path == null
+            ? `https://placehold.co/400x600`
+            : `https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`
+          }
           alt={movieDetails.title}
-          // width="375"
-          // height="478"
+
         />
       </div>
       <div class="content">
