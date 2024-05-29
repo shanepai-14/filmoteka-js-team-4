@@ -30,6 +30,8 @@ export function convertDate(date) {
   return formattedDate;
 }
 export function getGenreNamesByIds(ids) {
+  // Ensure ids is an array before processing
+  if (!Array.isArray(ids)) return '';
   const names = ids
     .map(id => {
       const genre = genres.find(genre => genre.id === id);
@@ -39,8 +41,12 @@ export function getGenreNamesByIds(ids) {
   return names.join(', ');
 }
 
+// Function to create HTML for a movie card
 export function movieCard(id, poster_path, title, genre_ids, year) {
+  const genres = getGenreNamesByIds(genre_ids);
+  const releaseYear = Array.isArray(year) ? year[0] : 'N/A'; // Ensure year is processed correctly
   return `
+
         <div class="movie-card" data-id="${id}">
           <img src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">
           <p class="movie-title">${title}</p>
@@ -60,3 +66,4 @@ export function movieCardUpcoming(id, poster_path, title, year) {
         </div>
       `;
 }
+
