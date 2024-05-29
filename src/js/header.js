@@ -14,7 +14,7 @@ import throttle from 'lodash.throttle';
 
 //Elements in header2.html
 const searchForm = document.getElementById('search-form');
-const searchInput = document.getElementById('input-textbox');
+const searchInput = document.getElementById('input-textbox-home');
 const gallery = document.querySelector('.gallery');
 const submitBtn = document.querySelector('button[type="submit"]');
 const navLinkLists = document.querySelectorAll('.nav-list-link');
@@ -45,7 +45,7 @@ searchForm.addEventListener('submit', handleSubmit);
 
 navLinkLists.forEach(navLinkList => {
   navLinkList.addEventListener('click', e => {
-    e.preventDefault();
+    // e.preventDefault();
     document.querySelector('.active')?.classList.remove('active');
     navLinkList.classList.add('active');
   });

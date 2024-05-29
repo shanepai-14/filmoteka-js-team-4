@@ -1,41 +1,36 @@
-<header class="header">
+<header class="header-library">
   <div class="container main-container">
     <a href="/" class="nav-logo film" target="">
       <svg class="film-icon-svg">
         <use id="film-icon" href="./images/header-images/film.svg#film"></use>
       </svg>
+      <span class="title">Filmoteka</span>
     </a>
     <nav class="nav-bar">
       <ul class="nav-menu">
-        <li class="nav nav-menu-list title">
-          <a href="/" class="nav-link title" target=""> Filmoteka </a>
-        </li>
         <li class="nav nav-menu-list home">
-          <a href="./index.html" class="nav-list-link home active" target="">
-            HOME
-          </a>
+          <a href="./index.html" class="nav-list-link home"> HOME </a>
         </li>
         <li class="nav nav-menu-list library">
-          <a href="./library.html" class="nav-list-link library" target="">
+          <a href="./library.html" class="nav-list-link library active">
             MY LIBRARY
           </a>
         </li>
       </ul>
     </nav>
   </div>
-  <form class="search-form" id="search-form">
-    <div class="container form-container">
-      <input
+  <form class="search-form-library" id="search-form">
+    <div class="container form-container-library">
+      <!-- <input
         type="text"
         name="searchQuery"
-        id="input-textbox"
+        id="input-textbox-library"
         autocomplete="off"
         placeholder="Search Movies"
         autofocus
-      />
-      <button type="submit">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </button>
+      /> -->
+      <button class="watched" type="submit">WATCHED</button>
+      <button class="queue" type="submit">QUEUE</button>
     </div>
   </form>
 </header>
