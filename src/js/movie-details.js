@@ -78,7 +78,7 @@ const MovieDetails = ({ movieDetails = {}, modal }) => {
 };
 
 const showMovieDetails = movieDetails => {
-  console.log('showMovieDetails ->', movieDetails);
+  // console.log('showMovieDetails ->', movieDetails);
   const instance = basicLightbox.create('');
   document.addEventListener('keyup', e => {
     if (e.code === 'Escape') {

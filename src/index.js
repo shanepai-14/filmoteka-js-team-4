@@ -24,7 +24,7 @@ async function movieList(page = 1) {
   movieContainer.innerHTML = '';
   try {
     const queryResult = await getMoviesPopular(currentPage);
-    console.log(queryResult);
+    // console.log(queryResult);
 
     displayResult(queryResult.results);
     setupPagination(queryResult.total_results);
@@ -94,13 +94,13 @@ searchForm.addEventListener('submit', async (e) => {
   e.preventDefault(); // Prevent form submission
 
   const searchTerm = searchInput.value.trim(); 
-  console.log(searchTerm)// Get the search term
+  // console.log(searchTerm)// Get the search term
   movieContainer.innerHTML = '';
    let page = 1;
   if (searchTerm) {
     try {
       const movies = await searchMovies(searchTerm,page); // Call your searchMovies function
-      console.log(movies.results);
+      // console.log(movies.results);
       displayResult(movies.results);
       setupSearchPagination(movies.total_results,searchTerm);
       // setupPagination(movies.total_results);
