@@ -1,6 +1,6 @@
 import axios from 'axios';
-export const API_KEY = '7eaa6623d3beea74fe1a17c7d615eb46'
-export const BASE_URL = 'https://api.themoviedb.org/'
+export const API_KEY = '7eaa6623d3beea74fe1a17c7d615eb46';
+export const BASE_URL = 'https://api.themoviedb.org/';
 
 export const getMoviesPopular = async page => {
   try {
@@ -29,7 +29,7 @@ export const searchMovies = async (query, page) => {
         },
       }
     );
-    console.log(data);
+    // console.log(data);
     return data;
   } catch (error) {
     throw new Error(`Error searching movies: ${error.message}`);
@@ -39,9 +39,14 @@ export const searchMovies = async (query, page) => {
 export const getMovieDetails = async id => {
   try {
     const { data } = await axios.get(
-      `${BASE_URL}3/movie/${id}?api_key=${API_KEY}`
+      `${BASE_URL}3/movie/${id}?api_key=${API_KEY}`,
+      {
+        headers: {
+          accept: 'application/json',
+        },
+      }
     );
-    // console.log(data);
+    console.log(data);
     return data;
   } catch (error) {
     throw new Error(`Error fetching movie details: ${error.message}`);

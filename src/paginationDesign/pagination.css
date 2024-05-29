@@ -488,3 +488,7 @@
 body div .data-container {
   margin-top: 20px;
 }
+
+.is-hiddenPagination {
+  display: none;
+}

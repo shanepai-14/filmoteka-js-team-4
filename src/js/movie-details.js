@@ -31,42 +31,44 @@ const MovieDetails = ({ movieDetails = {}, modal }) => {
         <h2 class="movie-title">{movieDetails.title}</h2>
 
         <div class="left-right-container">
-          <ul class="property">
-            <li>
-              <div class="left-side">Vote/Votes </div>
-              <span class="right-side">
-                <span class="vote">{movieDetails.vote_average}</span> <i>/</i>
-                <span class="votes">{movieDetails.vote_count}</span>
-              </span>
-            </li>
-            <li>
-              <div class="left-side ">Popularity </div>
-              <span class="right-side">
-                {movieDetails.popularity.toFixed(2)}
-              </span>
-            </li>
-            <li>
-              <div class="left-side ">Original Title </div>
-              <span class="right-side">{movieDetails.original_title}</span>
-            </li>
-            <li>
-              <div class="left-side ">Genre </div>
-              <span class="right-side">
-                {getMovieGenresNames(movieDetails.genres)}
-              </span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="about">
-          <p class="about-title">About</p>
-          <div class="overview-container">
-            <p class="movie-overview">{movieDetails.overview}</p>
+          <div class="movie-details-modal">
+            <ul class="property">
+              <li>
+                <div class="left-side">Vote/Votes </div>
+                <span class="right-side">
+                  <span class="vote">{movieDetails.vote_average}</span> <i>/</i>
+                  <span class="votes">{movieDetails.vote_count}</span>
+                </span>
+              </li>
+              <li>
+                <div class="left-side ">Popularity </div>
+                <span class="right-side">
+                  {movieDetails.popularity.toFixed(2)}
+                </span>
+              </li>
+              <li>
+                <div class="left-side ">Original Title </div>
+                <span class="right-side">{movieDetails.original_title}</span>
+              </li>
+              <li>
+                <div class="left-side ">Genre </div>
+                <span class="right-side">
+                  {getMovieGenresNames(movieDetails.genres)}
+                </span>
+              </li>
+            </ul>
           </div>
-        </div>
-        <div class="buttons">
-          <button class="button-to-watched">Add to watched</button>
-          <button class="button-to-queue">Add to queue</button>
+
+          <div class="about">
+            <p class="about-title">About</p>
+            <div class="overview-container">
+              <p class="movie-overview">{movieDetails.overview}</p>
+            </div>
+          </div>
+          <div class="buttons modalBtnContainer" data-id={movieDetails.id}>
+            <button class="button-to-watched libraryBtn">Add to watched</button>
+            <button class="button-to-queue libraryBtn">Add to queue</button>
+          </div>
         </div>
       </div>
     </div>
