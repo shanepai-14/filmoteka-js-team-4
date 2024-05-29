@@ -35,18 +35,11 @@ export const options = {
   },
 };
 
-function handleSubmit(e) {
-  e.preventDefault();
-  options.params.query = searchInput.value.toLowerCase().trim();
-  // console.log(options.params.query);
-  MovieController(options.params.query, options.params.page);
-}
-searchForm.addEventListener('submit', handleSubmit);
+// function handleSubmit(e) {
+//   e.preventDefault();
+//   options.params.query = searchInput.value.toLowerCase().trim();
+//   // console.log(options.params.query);
+//   MovieController(options.params.query, options.params.page);
+// }
+// searchForm.addEventListener('submit', handleSubmit);
 
-navLinkLists.forEach(navLinkList => {
-  navLinkList.addEventListener('click', e => {
-    // e.preventDefault();
-    document.querySelector('.active')?.classList.remove('active');
-    navLinkList.classList.add('active');
-  });
-});
