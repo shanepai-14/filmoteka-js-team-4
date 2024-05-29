@@ -46,7 +46,7 @@
   max-width: 500px;
   max-height: calc(100vh - 40px);
   padding: 48px 20px;
-  // overflow-y: scroll;
+ overflow-y: scroll;
 
   .img-container {
     flex: 1 1;
@@ -175,7 +175,7 @@
     max-width: 978px;
     padding: 50px 30px 40px;
     gap: 30px;
- 
+    overflow-y:auto;
     .img-container{
       max-width:  300px;
     }

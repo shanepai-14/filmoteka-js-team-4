@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import { getMovieDetails } from './api';
 import { showMovieDetails } from './movie-details';
-
+import { showTeam } from './team-modal';
 async function handleMovieCardClick(event) {
   var movieCard = event.target.closest('.movie-card');
 
@@ -16,9 +16,11 @@ async function handleMovieCardClick(event) {
   }
 }
 
-// Get the parent container element
+
 const upcomingList = document.getElementById('swiper-list');
 const movieContainer = document.querySelector('.movie-container');
+const teamModal = document.querySelector('.footer-section-button');
+if(teamModal) teamModal.addEventListener('click', showTeam);
 if(upcomingList) upcomingList.addEventListener('click', handleMovieCardClick);
 if(movieContainer) movieContainer.addEventListener('click', handleMovieCardClick);
 
