@@ -34,20 +34,22 @@ img {
 li {
   list-style: none;
 }
-
+.main-container{
+  padding: 4.438rem;
+}
 .movie-container {
   display: flex;
-  // max-width: 1140px;
+  max-width: 1529.984px;
   justify-content: center;
   padding: 0;
-  gap: 30px;
+  gap: 20px;
   margin-left: auto;
   margin-right: auto;
   flex-wrap: wrap;
-  padding: 4.438rem;
+
 
   .movie-card img {
-    width: 274px;
+    width: 259px;
     border-radius: 5px;
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
   }
@@ -61,7 +63,12 @@ li {
     line-height: 16px;
     margin-top: 10px;
     margin-bottom: 0;
+    width: 259px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
+ 
   .movie-genre {
     color: #ff6b08;
     font-family: Roboto;
@@ -70,5 +77,10 @@ li {
     font-weight: 500;
     line-height: 16px;
     margin-top: 6px;
+    width: 259px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+   
   }
 }

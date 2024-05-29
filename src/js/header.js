@@ -14,17 +14,11 @@ import throttle from 'lodash.throttle';
 
 //Elements in header2.html
 const searchForm = document.getElementById('search-form');
-const searchInput = document.getElementById('input-textbox');
+const searchInput = document.getElementById('input-textbox-home');
 const gallery = document.querySelector('.gallery');
 const submitBtn = document.querySelector('button[type="submit"]');
-const navLinksHome = document.querySelector('.home');
-// console.log(navLinksHome);
-const navLinksLibrary = document.querySelector('.library');
-const navLinks = document.querySelectorAll('.nav-list-link');
-console.log(navLinks);
-const activePage = window.location.pathname;
-console.log(activePage);
-const navMenuList = document.querySelectorAll('.nav-bar');
+const navLinkLists = document.querySelectorAll('.nav-list-link');
+console.log(navLinkLists);
 
 //Elements in index.html
 export const options = {
@@ -49,15 +43,10 @@ function handleSubmit(e) {
 }
 searchForm.addEventListener('submit', handleSubmit);
 
-//Elements in Navigation
-
-/* function handleNavMenuClick(e) {
-  navLinks.forEach(link => {
-    if (link.href.includes(`${activePage}`)) {
-      console.log(link.href);
-      link.classList.add('active');
-    }
+navLinkLists.forEach(navLinkList => {
+  navLinkList.addEventListener('click', e => {
+    // e.preventDefault();
+    document.querySelector('.active')?.classList.remove('active');
+    navLinkList.classList.add('active');
   });
-}
-
-navMenuList.addEventListener('click', handleNavMenuClick); */
+});

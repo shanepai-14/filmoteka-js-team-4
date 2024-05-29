@@ -1,45 +1,59 @@
-const movieGrid = document.querySelector('.movie-grid');
-const movies = [
-  {
-    title: "THE WATCHERS",
-    poster: "https://www.example.com/thewatchers.jpg",
-    releaseDate: "2024-06-07"
-  },
-  {
-    title: "IN A VIOLENT NATURE",
-    poster: "https://www.example.com/inaviolentnature.jpg",
-    releaseDate: "2024-05-31"
-  },
-  {
-    title: "THE DEAD DON'T HURT",
-    poster: "https://www.example.com/thedeaddont.jpg",
-    releaseDate: "2024-05-31"
-  },
-  // ... Add more movies
-];
 
-function createMovieCard(movie) {
-  const movieCard = document.createElement('div');
-  movieCard.classList.add('movie-card');
+import { upcoming } from "./api";
+import {movieCardUpcoming} from './utils';
 
-  const posterImg = document.createElement('img');
-  posterImg.src = movie.poster;
-  posterImg.alt = movie.title;
 
-  const title = document.createElement('h2');
-  title.textContent = movie.title;
 
-  const releaseDate = document.createElement('p');
-  releaseDate.textContent = `Release Date: ${movie.releaseDate}`;
+const upcomingList = document.getElementById('swiper-list');
 
-  movieCard.appendChild(posterImg);
-  movieCard.appendChild(title);
-  movieCard.appendChild(releaseDate);
 
-  return movieCard;
+async function upcomingMovies(){
+  try {
+    const data = await upcoming();
+    displayResult(data.results);
+  }catch(e) {
+
+  } finally {
+    var swiper = new Swiper('.mySwiper', {
+
+      pagination: {
+        el: '.swiper-pagination',
+      },
+      slidesPerView: 8,
+      spaceBetween: 18,
+      autoplay: {
+        delay: 3000,
+      },
+      breakpoints: {
+        // when window width is >= 320px
+        1159: {
+          slidesPerView: 8,
+        },
+        768: {
+          slidesPerView: 6,
+        },
+        1: {
+          slidesPerView: 2,
+        },
+      },
+    
+    });
+  }
 }
 
-movies.forEach(movie => {
-  const movieCard = createMovieCard(movie);
-  movieGrid.appendChild(movieCard);
-});
+
+
+function displayResult(dataResult) {
+  let finalResult = dataResult.map(result => {
+    return movieCardUpcoming(
+      result.id,
+      result.poster_path,
+      result.title,
+      result.release_date
+    );
+  });
+  upcomingList.innerHTML = finalResult.join('');
+}
+
+
+upcomingMovies();
