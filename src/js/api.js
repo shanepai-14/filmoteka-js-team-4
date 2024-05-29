@@ -12,7 +12,7 @@ export const getMoviesPopular = async page => {
         },
       }
     );
-    console.log(data);
+    // console.log(data);
     return data;
   } catch (error) {
     throw new Error(`Error fetching popular movies: ${error.message}`);
@@ -46,7 +46,7 @@ export const getMovieDetails = async id => {
         },
       }
     );
-    console.log(data);
+    // console.log(data);
     return data;
   } catch (error) {
     throw new Error(`Error fetching movie details: ${error.message}`);
@@ -70,7 +70,7 @@ export const upcoming = async () => {
     const { data } = await axios.get(
       `${BASE_URL}3/movie/upcoming?api_key=${API_KEY}&region=US&language=en-US&page=1`
     );
-    console.log(data);
+    // console.log(data);
     return data;
   } catch (error) {
     throw new Error(`Error fetching movie details: ${error.message}`);
