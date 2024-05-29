@@ -11,40 +11,39 @@ const MovieDetails = ({ movieDetails = {}, modal }) => {
     genres
       .splice(0, Math.min(2, genres.length))
       .map(genre => genre.name)
-      .join(',');
+      .join(', ');
 
   return (
     <div class="modal-movie">
-      <button onClick={modalClose} class="button-close" data-dismiss="modal">
-        <svg
-          class="icon"
-          width="30"
-          height="30"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="m8 8 14 14M8 22 22 8" stroke-width="2"></path>
-        </svg>
-      </button>
-
-      <img
-        src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
-        alt={movieDetails.title}
-      />
-      <div class="modal-details">
+      <a onClick={modalClose} class="button-close" data-dismiss="modal">
+        &times;
+      </a>
+      <div class="img-container">
+        <img
+          class="image"
+          src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
+          alt={movieDetails.title}
+          // width="375"
+          // height="478"
+        />
+      </div>
+      <div class="content">
         <h2 class="movie-title">{movieDetails.title}</h2>
 
-        <div class="movie-details-modal">
+        <div class="left-right-container">
           <ul class="property">
             <li>
-              <div class="left-side">Vote/Votes </div>{' '}
-              <div class="votes-right-side">
-                <span class="vote">{movieDetails.vote_average}</span>/{' '}
-              </div>
-              <span class="votes">{movieDetails.vote_count}</span>{' '}
+              <div class="left-side">Vote/Votes </div>
+              <span class="right-side">
+                <span class="vote">{movieDetails.vote_average}</span> <i>/</i>
+                <span class="votes">{movieDetails.vote_count}</span>
+              </span>
             </li>
             <li>
               <div class="left-side ">Popularity </div>
-              <span class="right-side">{movieDetails.popularity}</span>
+              <span class="right-side">
+                {movieDetails.popularity.toFixed(2)}
+              </span>
             </li>
             <li>
               <div class="left-side ">Original Title </div>
@@ -54,15 +53,20 @@ const MovieDetails = ({ movieDetails = {}, modal }) => {
               <div class="left-side ">Genre </div>
               <span class="right-side">
                 {getMovieGenresNames(movieDetails.genres)}
-              </span>{' '}
+              </span>
             </li>
           </ul>
         </div>
-      </div>
-      <div class="about">
-        <p class="about-title">About</p>
-        <div class="about-container">
-          <p class="movie-overview">{movieDetails.overview}</p>
+
+        <div class="about">
+          <p class="about-title">About</p>
+          <div class="overview-container">
+            <p class="movie-overview">{movieDetails.overview}</p>
+          </div>
+        </div>
+        <div class="buttons">
+          <button class="button-to-watched">Add to watched</button>
+          <button class="button-to-queue">Add to queue</button>
         </div>
       </div>
     </div>
@@ -72,6 +76,11 @@ const MovieDetails = ({ movieDetails = {}, modal }) => {
 const showMovieDetails = movieDetails => {
   console.log('showMovieDetails ->', movieDetails);
   const instance = basicLightbox.create('');
+  document.addEventListener('keyup', e => {
+    if (e.code === 'Escape') {
+      instance.close();
+    }
+  });
   render(
     <MovieDetails movieDetails={movieDetails} modal={instance} />,
     instance.element()

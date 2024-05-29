@@ -1,5 +1,6 @@
 import './js/modal.js';
 import './js/header.js';
+import './js/upcoming.js'
 // import './js/header_library.js';
 
 import { MovieController, getMoviesPopular } from './js/api.js';
@@ -10,7 +11,7 @@ const movieContainer = document.querySelector('.movie-container');
 const listLoader = document.querySelector('.loader');
 let currentPage = 1;
 
-/* async function movieList(page = 1) {
+ async function movieList(page = 1) {
   listLoader.classList.remove('is-hidden');
   currentPage = 1;
   movieContainer.innerHTML = '';
@@ -24,7 +25,7 @@ let currentPage = 1;
   } catch (error) {
     console.error('Error fetching movies:', error);
   }
-} */
+} 
 
 function displayResult(dataResult) {
   let finalResult = dataResult.map(result => {
@@ -57,4 +58,4 @@ function setupPagination(total) {
   });
 }
 
-// movieList();
+movieList();
