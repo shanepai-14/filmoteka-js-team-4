@@ -5,13 +5,10 @@ import { getMovieDetails } from './api';
 import { showMovieDetails } from './movie-details';
 
 async function handleMovieCardClick(event) {
-
   var movieCard = event.target.closest('.movie-card');
 
- 
   if (movieCard) {
     var dataId = movieCard.getAttribute('data-id');
-
 
     console.log('Clicked movie-card data-id:', dataId);
     const movieDetails = await getMovieDetails(dataId);
@@ -24,5 +21,5 @@ var upcomingList = document.getElementById('swiper-list');
 var movieContainer = document.querySelector('.movie-container');
 
 // console.log(movieContainer);
-upcomingList.addEventListener('click', handleMovieCardClick);
+// upcomingList.addEventListener('click', handleMovieCardClick);
 movieContainer.addEventListener('click', handleMovieCardClick);
