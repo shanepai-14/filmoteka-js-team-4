@@ -44,7 +44,8 @@ function displayResult(dataResult) {
       result.poster_path,
       result.title,
       result.genre_ids,
-      year
+      year,
+      result.vote_average
     );
   });
   movieContainer.innerHTML = finalResult.join('');

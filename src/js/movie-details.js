@@ -36,7 +36,7 @@ const MovieDetails = ({ movieDetails = {}, modal }) => {
               <li>
                 <div class="left-side">Vote/Votes </div>
                 <span class="right-side">
-                  <span class="vote">{movieDetails.vote_average}</span> <i>/</i>
+                  <span class="vote">{movieDetails.vote_average.toFixed(1)}</span> <i>/</i>
                   <span class="votes">{movieDetails.vote_count}</span>
                 </span>
               </li>

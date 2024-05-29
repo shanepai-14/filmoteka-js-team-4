@@ -37,15 +37,17 @@ function displayResult(dataResult) {
 function displayResultLibrary(dataResult) {
   listPagination.classList.add('is-hiddenPagination');
   const finalResult = dataResult.map(result => {
+    const genre_ids = result.genres.map(genre => genre.id);
     const year = result.release_date
-      ? result.release_date.split('-')[0]
+      ? result.release_date.split('-')
       : 'N/A';
     return movieCard(
       result.id,
       result.poster_path,
       result.title,
-      result.genre_ids || [],
-      year
+      genre_ids|| [],
+      year,
+      result.vote_average
     );
   });
   movieContainer.insertAdjacentHTML('beforeend', finalResult.join(''));

@@ -17,9 +17,10 @@ async function handleMovieCardClick(event) {
 }
 
 // Get the parent container element
-var upcomingList = document.getElementById('swiper-list');
-var movieContainer = document.querySelector('.movie-container');
+const upcomingList = document.getElementById('swiper-list');
+const movieContainer = document.querySelector('.movie-container');
+if(upcomingList) upcomingList.addEventListener('click', handleMovieCardClick);
+if(movieContainer) movieContainer.addEventListener('click', handleMovieCardClick);
 
-// console.log(movieContainer);
-// upcomingList.addEventListener('click', handleMovieCardClick);
-movieContainer.addEventListener('click', handleMovieCardClick);
+
+
