@@ -10,7 +10,7 @@ async function handleMovieCardClick(event) {
   if (movieCard) {
     var dataId = movieCard.getAttribute('data-id');
 
-    console.log('Clicked movie-card data-id:', dataId);
+    // console.log('Clicked movie-card data-id:', dataId);
     const movieDetails = await getMovieDetails(dataId);
     showMovieDetails(movieDetails);
   }

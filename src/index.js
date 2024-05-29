@@ -19,6 +19,8 @@ const listPagination = document.querySelector('.is-hiddenPagination');
 const libraryList = document.querySelector('.library');
 const libraryListQ = document.querySelector('.libraryQ');
 const libraryListW = document.querySelector('.libraryW');
+const search_error = document.querySelector('.search_error');
+search_error.classList.add('display-none')
 let currentPage = 1;
 
 async function movieList(page = 1) {
@@ -38,10 +40,7 @@ async function movieList(page = 1) {
 }
 
 function displayResult(dataResult) {
-  if(dataResult.length === 0) {
-    movieList();
-    return;
-  }
+
   let finalResult = dataResult.map(result => {
     let year = result.release_date.split('-');
     return movieCard(
@@ -106,7 +105,16 @@ searchForm.addEventListener('submit', async (e) => {
       // console.log(movies.results);
       displayResult(movies.results);
       setupSearchPagination(movies.total_results,searchTerm);
-      // setupPagination(movies.total_results);
+     const  dataResult =movies.results;
+      if(dataResult.length === 0) {
+        search_error.classList.remove('display-none');
+        search_error.classList.add('display-block')
+        movieList();
+        return;
+      }
+      search_error.classList.remove('display-block');
+      search_error.classList.add('display-none');
+
     } catch (error) {
       console.error('Error searching movies:', error);
   
@@ -213,13 +221,13 @@ libraryList.addEventListener('click', () => {
   watchedListData(0);
 });
 
-libraryListQ.addEventListener('click', () => {
-  watchedListData(1);
-});
+// libraryListQ.addEventListener('click', () => {
+//   watchedListData(1);
+// });
 
-libraryListW.addEventListener('click', () => {
-  watchedListData(0);
-});
+// libraryListW.addEventListener('click', () => {
+//   watchedListData(0);
+// });
 
 window.addEventListener("load", (event) => {
   movieList();

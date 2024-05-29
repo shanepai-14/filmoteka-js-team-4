@@ -18,7 +18,7 @@ const searchInput = document.getElementById('input-textbox-home');
 const gallery = document.querySelector('.gallery');
 const submitBtn = document.querySelector('button[type="submit"]');
 const navLinkLists = document.querySelectorAll('.nav-list-link');
-console.log(navLinkLists);
+
 
 //Elements in index.html
 export const options = {
